@@ -26,11 +26,11 @@ const findAll = () => {
   });
 };
 
-const findOne = (userId) => {
+const findOne = (emailID) => {
   return new Promise((resolve, reject) => {
     connection.query(
-      "SELECT * FROM `user` WHERE `userId` = ?",
-      [userId],
+      "SELECT * FROM `user` WHERE `emailID` = ?",
+      [emailID],
       (err, result) => {
         if (err) {
           reject(err);
@@ -41,6 +41,8 @@ const findOne = (userId) => {
     );
   });
 };
+
+const updateOne = (emailID, data) => {};
 
 const userService = { create, findAll, findOne };
 
